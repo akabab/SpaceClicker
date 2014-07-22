@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Ship : MonoBehaviour {
@@ -9,6 +9,9 @@ public class Ship : MonoBehaviour {
 
   private Transform flames;
   private float t;
+
+  public int boost;
+  public int maxBoost;
 
   // Use this for initialization
   void Start () {

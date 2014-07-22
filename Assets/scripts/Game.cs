@@ -16,6 +16,9 @@ public class Game : MonoBehaviour {
   public float curDistance;
   public float curProgress;
 
+  public enum State {STOPED, PLAYING, PAUSED, ERR};
+  public State _state;
+
   private float deltaDist;
 
   private Ship ship;
@@ -24,6 +27,7 @@ public class Game : MonoBehaviour {
   void Start () {
     ship = (Ship) FindObjectOfType(typeof(Ship));
     deltaDist = distance.y - distance.x;
+    _state = State.PLAYING;
   }
 
   // Update is called once per frame
