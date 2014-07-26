@@ -4,9 +4,10 @@ using System.Collections;
 // [ExecuteInEditMode]
 public class Booster : MonoBehaviour {
 
-  public float upZone;
   public float upZoneMin;
+  public float upZone;
   public float criticZone;
+  public float safeZone;
   public float inc;
   public float dec;
   public float cur;
@@ -25,13 +26,10 @@ public class Booster : MonoBehaviour {
   private Vector2 _upRange;
   private Vector2 _criticalRange;
 
-
-
   private float t;
   public float delayToUp;
 
   public Texture boosterTexture;
-  //private Color[] col = {Color.cyan, Color.blue, Color.red};
 
   public Rect barRect;// = new Rect(800, 400, 20, 200);
   public Color[] barColors;
@@ -57,9 +55,10 @@ public class Booster : MonoBehaviour {
 
     state = getState();
 
+    safeZone = 100f - criticZone - upZone;
+
     cur -= dec * Time.deltaTime;
     if (cur > 100f) cur = 100f;
-    if (cur < 0f) cur = 0f;
 
     if (state == State.UP) {
       t += Time.deltaTime;
@@ -71,7 +70,17 @@ public class Booster : MonoBehaviour {
     //UPGRADE
     if (_ship.boost <= _ship.maxBoost && t >= delayToUp) {
       _ship.boost += 1;
-      cur = 0f;
+      cur = 20f;
+    }
+
+    //DOWNGRADE
+    if (cur < 0f) {
+      if (_ship.boost > 0) {
+        _ship.boost -= 1;
+        cur = safeZone;
+      }
+      else
+        cur = 0f;
     }
 
     //Up Zone

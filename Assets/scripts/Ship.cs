@@ -4,6 +4,7 @@ using System.Collections;
 public class Ship : MonoBehaviour {
 
   public int score;
+  public float minSpeed;
   public float speed;
   public float delayBeforeDecay;
 
@@ -21,16 +22,14 @@ public class Ship : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
+    speed = minSpeed + boost;
+
     flames.GetComponent<Animator>().speed = speed / 10f; //
+
 
     t -= Time.deltaTime;
     if (t <= 0f) {
       speed -= Time.deltaTime;
     }
-  }
-
-  void OnMouseUp () {
-    speed += 1;
-    t = delayBeforeDecay;
   }
 }
