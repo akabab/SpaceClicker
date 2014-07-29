@@ -1,6 +1,12 @@
 fileFormatVersion: 2
 guid: a4a0cddf501b0ca428f5d01f2af41fea
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sprite_Propulse_01_0
+    21300002: Sprite_Propulse_01_1
+    21300004: Sprite_Propulse_01_2
+    21300006: Sprite_Propulse_01_3
+    21300008: Sprite_Propulse_01_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +41,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +57,7 @@ TextureImporter:
         height: 150
       alignment: 5
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_Propulse_01_1
       rect:
         serializedVersion: 2
@@ -59,6 +67,7 @@ TextureImporter:
         height: 150
       alignment: 5
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_Propulse_01_2
       rect:
         serializedVersion: 2
@@ -68,6 +77,7 @@ TextureImporter:
         height: 150
       alignment: 5
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_Propulse_01_3
       rect:
         serializedVersion: 2
@@ -77,6 +87,7 @@ TextureImporter:
         height: 150
       alignment: 5
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_Propulse_01_4
       rect:
         serializedVersion: 2
@@ -86,5 +97,6 @@ TextureImporter:
         height: 150
       alignment: 5
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

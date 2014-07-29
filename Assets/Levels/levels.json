@@ -1,0 +1,23 @@
+{
+  "level": [
+    {
+      "name": "test",
+      "distance": 10000,
+      "obstacles": [
+        {"type": "asteroids", "start": 10, "end": 20},
+        {"type": "blackHole", "start": 50, "end": 60}
+      ],
+      "prize": 3000
+    },
+
+    {
+      "name": "test2",
+      "distance": 1000,
+      "obstacles": [
+        {"type": "asteroids", "start": 30, "end": 43}
+      ],
+      "prize": 500
+    }
+  ]
+}
+

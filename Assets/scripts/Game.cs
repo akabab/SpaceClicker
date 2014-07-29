@@ -19,14 +19,11 @@ public class Game : MonoBehaviour {
   public enum State {STOPED, PLAYING, PAUSED, ERR};
   public State _state;
 
-  private float deltaDist;
-
   private Ship ship;
 
   // Use this for initialization
   void Start () {
     ship = (Ship) FindObjectOfType(typeof(Ship));
-    deltaDist = distance.y - distance.x;
     _state = State.PLAYING;
   }
 
@@ -34,5 +31,14 @@ public class Game : MonoBehaviour {
   void Update () {
     curDistance += ship.speed * Time.deltaTime;
     curProgress = (curDistance / distance.y) * 100;
+  }
+
+  void OnGUI () {
+    DisplayDeviceOrientation();
+  }
+
+  void DisplayDeviceOrientation () {
+    GUILayout.Label("Orientation: " + Screen.orientation);
+    GUILayout.Label("Device Orientation: " + Input.deviceOrientation);
   }
 }
