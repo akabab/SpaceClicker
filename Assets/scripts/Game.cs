@@ -12,7 +12,7 @@ public class Game : MonoBehaviour {
       return m_Instance;
   }
 
-  public Vector2 distance;
+  // public Vector2 distance;
   public float curDistance;
   public float curProgress;
 
@@ -21,20 +21,30 @@ public class Game : MonoBehaviour {
 
   private Ship ship;
 
+  private Level _level;
+
   // Use this for initialization
   void Start () {
     ship = (Ship) FindObjectOfType(typeof(Ship));
     _state = State.PLAYING;
+    _level = Level.Get();
   }
 
   // Update is called once per frame
   void Update () {
     curDistance += ship.speed * Time.deltaTime;
-    curProgress = (curDistance / distance.y) * 100;
+    curProgress = (curDistance / Level.Get().distance) * 100;
   }
 
   void OnGUI () {
     DisplayDeviceOrientation();
+
+    for (int i=0; i < _level.obstacles.Count; i++) {
+      if (_level.obstacles[i].start < curProgress && curProgress < _level.obstacles[i].end) {
+        GUILayout.Label("DANGER: " + _level.obstacles[i].type + " !!!");
+      }
+    }
+
   }
 
   void DisplayDeviceOrientation () {
