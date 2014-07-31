@@ -18,7 +18,6 @@ public class Interface : MonoBehaviour {
   }
 
   void OnGUI () {
-
     // GUIAspectRatio.Get().SetAspectRatio();
 
     // GUISizer.BeginGUI();
@@ -33,12 +32,24 @@ public class Interface : MonoBehaviour {
 
   void displayProgressBar() {
 
-    //progress bar
-    Rect progressBarRect = new Rect(margin, Screen.height - 30, Screen.width - (2 * margin), 10);
+    float barSize = Screen.width - (2 * margin);
+
+    // progress bar
+    Rect progressBarRect = new Rect(margin, Screen.height - 30, barSize, 10);
     GUI.DrawTexture(progressBarRect, t[0]);
-    //pbar cursor
+
+    // obstacles
+    for (int i=0; i < Level.Get().obstacles.Count; i++) {
+      GUI.DrawTexture(new Rect(margin + (barSize * Level.Get().obstacles[i].start / 100f), Screen.height - 35, 5, 20), t[0]);
+      GUI.DrawTexture(new Rect(margin + (barSize * Level.Get().obstacles[i].end / 100f) - 5, Screen.height - 35, 5, 20), t[0]);
+      GUI.Label(new Rect(margin + (barSize * Level.Get().obstacles[i].start / 100f) + 10, Screen.height - 50, 100, 30), Level.Get().obstacles[i].type);
+      //Drawing.DrawLine(new Vector2(margin + (barSize * Level.Get().obstacles[i].start / 100f) + 10, Screen.height - 30), new Vector2(margin + (barSize * Level.Get().obstacles[i].start / 100f + 20), Screen.height - 100), Color.white, 1f);
+
+    }
+
+
+    // ship cursor
     float cursorPos = margin + (Game.Get().curProgress / 100 * progressBarRect.width);
     GUI.DrawTexture(new Rect(cursorPos - 20, Screen.height - 50, 50, 35), t[1]);
-
   }
 }

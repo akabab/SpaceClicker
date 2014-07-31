@@ -5,7 +5,7 @@
       "distance": 10000,
       "obstacles": [
         {"type": "asteroids", "start": 10, "end": 20},
-        {"type": "blackHole", "start": 50, "end": 60}
+        {"type": "black hole", "start": 50, "end": 60}
       ],
       "prize": 3000
     },
@@ -15,6 +15,19 @@
       "distance": 1000,
       "obstacles": [
         {"type": "asteroids", "start": 30, "end": 43}
+      ],
+      "prize": 500
+    }
+
+    {
+      "name": "level3",
+      "distance": 4500,
+      "obstacles": [
+        {"type": "asteroids", "start": 12, "end": 24}
+        {"type": "comet", "start": 30, "end": 43}
+        {"type": "cosmic blast", "start": 60, "end": 70}
+        {"type": "gamma rays", "start": 75, "end": 80}
+        {"type": "black hole", "start": 90, "end": 95}
       ],
       "prize": 500
     }

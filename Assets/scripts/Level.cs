@@ -7,8 +7,7 @@ using System.Collections.Generic;
 public class Level : MonoBehaviour {
 
   private static Level m_Instance = null;
-  public static Level Get()
-  {
+  public static Level Get() {
       if (m_Instance == null)
           m_Instance = (Level) FindObjectOfType(typeof(Level));
       return m_Instance;
